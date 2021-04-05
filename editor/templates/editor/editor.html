@@ -2,12 +2,12 @@
 <html lang="en">
 {% load static %}
 <head>
-    <title>AI悦创·在线编程</title>
+    <title>icbug在线Python编辑器</title>
     <meta name="keywords" content="Python, JavaScript, p5.js">
     <meta name="description" content="">
     <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/bootstrap-select/1.13.10/css/bootstrap-select.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="https://www.aiyc.top/wp-content/uploads/2020/06/1592413573-d02a42d9cb3dec9.ico">
+    <link rel="shortcut icon" href="{% static '/img/favicon.ico' %}">
     <style type="text/css" media="screen">
         .ace_editor .ace_content span, .ace_editor .ace_content .ace_line {
           font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace!important;
@@ -111,17 +111,17 @@
             <div id="editor"></div>
         </div>
         <div class="col-md-4 pl-0 pr-0">
-          <textarea id="console" class="console" autocomplete="off">Initializing...</textarea>
+          <textarea id="console" class="console" autocomplete="off">加载中...</textarea>
         </div>
     </div>
     <div class="row btn-area">
-        <button id="run" onclick="run()">> run</button>
-        <button id="save" onclick="save()">save</button>
-        <button id="open" onclick="performClick('file-input')">open</button>
-        <button id="share" onclick="share()">share</button>
-        <button id="blog" onclick="window.open('https://www.aiyc.top/')">Blog</button>
+        <button id="run" onclick="run()">> 运行</button>
+        <button id="save" onclick="save()">保存</button>
+        <button id="open" onclick="performClick('file-input')">打开</button>
+        <button id="share" onclick="share()">分享</button>
+        <button id="blog" onclick="window.open('https://github.com/icbug-development-team/icbug-online-code-editor')">源代码</button>
         <div class="choose-container theme-selector-container">
-            <span class="ml-2 mr-2">Theme: </span>
+            <span class="ml-2 mr-2">主题:</span>
             <select id="theme-selector" size="1" class="selectpicker" data-live-search="true" data-style="btn-success" data-width="100px">
                 <option value="ambiance">ambiance</option>
                 <option value="chaos">chaos</option>
@@ -163,7 +163,7 @@
             </select>
         </div>
         <div class="help-link-container my-auto">
-          &nbsp;&nbsp;<b> <a id="about" onclick="$('#about-modal').modal('show')" href="#">About the project</a></b>
+          &nbsp;&nbsp;<b> <a id="about" onclick="$('#about-modal').modal('show')" href="#">关于本项目</a></b>
         </div>
         <input id="file-input" type="file" style="position:fixed;top:-1000px;"/>
     </div>
@@ -172,17 +172,17 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Share your code</h5>
+        <h5 class="modal-title">分享你的代码</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body text-center">
         <div id="qrcode" style="margin-left:auto; margin-right:auto; margin-bottom: 20px;"></div>
-        <p>You can save this picture or scan the QR code to share it.</p>
+        <p>你可以存储这个照片或者扫描二维码来分享它！</p>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-default" type="button" data-dismiss="modal">close</button></div>
+        <button class="btn btn-default" type="button" data-dismiss="modal">关闭</button></div>
     </div>
   </div>
 </div>
@@ -191,7 +191,7 @@
   <div class="modal-dialog" style="width: 100%">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Preview</h5>
+        <h5 class="modal-title">预览</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -200,7 +200,7 @@
         <div id="p5Canvas"></div>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">close</button></div>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">关闭</button></div>
     </div>
   </div>
 </div>
@@ -209,24 +209,20 @@
   <div class="modal-dialog" style="width: 100%">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">About</h5>
+        <h5 class="modal-title">关于本项目</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body text-center">
-        <h3>AI悦创</h3>
         <hr>
-          <img class="image " src="https://images-aiyc-1301641396.cos.ap-guangzhou.myqcloud.com/20200712080135.jpg" alt="公众号：AI悦创" width="258" height="258">
-        <p>AI悦创·在线编程教育 </p>
-        <p>教学理念：浅者觉得其浅，深者觉得其深。</p>
-        <p>不收智商税，打造独一无二的 Python 一对一教学</p>
-        <p>公众号：AI悦创，VX：Jiabcdefh</p>
-        <p>推荐一个成功报名的学员佣金：300元</p>
-        <a href="https://github.com/AndersonHJB">Github link</a>
+        <p>本项目为icbug使用p5js+acejs+Django改编的一款在线编辑器！</p>
+        <p>支持内置模块以及普通程序的运行</p>
+        <p>暂不支持第三方模块，正在尝试开发中，敬请期待！</p>
+        <a href="https://github.com/icbug-development-team/icbug-online-code-editor">Source Code</a>
       </div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">close</button></div>
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">关闭</button></div>
     </div>
   </div>
 </div>

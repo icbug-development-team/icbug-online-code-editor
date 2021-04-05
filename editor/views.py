@@ -5,15 +5,7 @@ from .models import CodeShareModel
 from django.contrib.auth.models import User
 
 
-demo_code = '''# -*- coding: utf-8 -*-
-# @Time    : 
-# @Author  : 
-# @FileName: 
-# @Software: 
-# @Blog    :http://www.aiyc.top
-# @公众号   :AI悦创
-
-import random
+demo_code = '''import random
 
 waves = []
 
